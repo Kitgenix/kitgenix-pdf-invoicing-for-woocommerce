@@ -1,0 +1,62 @@
+/* Kitgenix PDF Invoicing for WooCommerce — Order meta box (order edit screen)
+   Loaded only on WC order edit pages. Uses WP colour tokens where possible.
+*/
+
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Primary action button — match brand colour */
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary {
+  background-color: #4f2a9a;
+  border-color: #3d1f7c;
+  color: #fff;
+  text-shadow: none;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary:hover,
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary:focus {
+  background-color: #6d3dc6;
+  border-color: #5b30ad;
+  color: #fff;
+}
+
+/* Buttons row */
+.kitgenix-pdf-invoicing-for-woocommerce-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Compact vertical stacking for narrow metabox sidebar */
+.kitgenix-compact-buttons {
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kitgenix-compact-buttons .button {
+  padding: 6px 10px;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* WORDPRESS 7.0 ORDER META */
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary {
+  background-color: #4f2a9a;
+  border-color: #42237f;
+  color: #ffffff;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary:hover,
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary:focus,
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta .button.button-primary:focus-visible {
+  background-color: #42237f;
+  border-color: #351b66;
+  color: #ffffff;
+}

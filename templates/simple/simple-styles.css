@@ -1,0 +1,291 @@
+/* ===========================
+   SIMPLE STYLESHEET
+   =========================== */
+@page {
+	size: A4;
+}
+
+html { margin: 0; padding: 0; }
+
+/* CSS variables (overridden by runtime injection from PdfGenerator) */
+:root{
+	--kitgenix-pdf-invoicing-for-woocommerce-primary:#111827;
+	--kitgenix-pdf-invoicing-for-woocommerce-accent:#2563eb;
+	--kitgenix-pdf-invoicing-for-woocommerce-text:#111827;
+	--kitgenix-pdf-invoicing-for-woocommerce-muted-text:#6b7280;
+	--kitgenix-pdf-invoicing-for-woocommerce-border:#e5e7eb;
+	--kitgenix-pdf-invoicing-for-woocommerce-table-header-bg:#000000;
+	--kitgenix-pdf-invoicing-for-woocommerce-table-header-text:#ffffff;
+	--kitgenix-pdf-invoicing-for-woocommerce-background:#ffffff;
+	--kitgenix-pdf-invoicing-for-woocommerce-footer-bg:#ffffff;
+	--kitgenix-pdf-invoicing-for-woocommerce-footer-text:#333333;
+}
+
+/* Ensure printable padding even when @page is ignored by the renderer
+   (this guarantees visible gutters on all renderers). */
+body {
+	margin: 0;
+	padding: 10mm 10mm 28mm 10mm; /* top right bottom left (increased bottom for footer) */
+	background: var(--kitgenix-pdf-invoicing-for-woocommerce-background, #fff);
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-text, #000);
+	font-family: DejaVu Sans, Arial, Helvetica, sans-serif;
+	font-size: 9.5pt;
+	line-height: 1.2;
+	overflow-wrap: anywhere;
+	box-sizing: border-box;
+}
+
+/* Encourage accurate background printing in PDF renderers */
+html, body {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+h1, h2, h3, h4 { margin: 0; padding: 0; font-weight: 700; }
+
+h1 { font-size: 16pt; margin: 4mm 0 6mm 0; }
+h3 { font-size: 10pt; }
+
+p { margin: 0; padding: 0; }
+p + p { margin-top: 2mm; }
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+th, td { vertical-align: top; text-align: left; }
+
+/* ===========================
+   LAYOUT CONTAINERS
+   =========================== */
+.kitgenix-pdf-invoicing-for-woocommerce-wrap { width: 100%; }
+
+/* ===========================
+   SIMPLE PACK (NEW LAYOUT)
+   =========================== */
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-header { margin-bottom: 8mm; }
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-header td { vertical-align: top; }
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-header td.kitgenix-pdf-invoicing-for-woocommerce-brand { width: 62%; padding-right: 6mm; }
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-header td.kitgenix-pdf-invoicing-for-woocommerce-docmeta { width: 38%; }
+
+.kitgenix-pdf-invoicing-for-woocommerce-brand-name {
+	font-size: 12pt;
+	font-weight: 700;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-primary, #000);
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-company-meta {
+	margin-top: 2mm;
+	font-size: 9pt;
+	line-height: 1.25;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-muted-text, #333);
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-doc-title {
+	font-size: 16pt;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+	text-align: right;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-primary, #000);
+}
+
+table.kitgenix-pdf-invoicing-for-woocommerce-meta-table {
+	margin-top: 2.5mm;
+	width: 100%;
+}
+
+table.kitgenix-pdf-invoicing-for-woocommerce-meta-table th {
+	font-weight: 400;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-muted-text, #333);
+	padding: 0.2em 2mm 0.2em 0;
+	width: 48%;
+	text-align: left;
+}
+
+table.kitgenix-pdf-invoicing-for-woocommerce-meta-table td {
+	padding: 0.2em 0;
+	width: 52%;
+	text-align: right;
+	white-space: nowrap;
+}
+
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-addresses { margin-bottom: 8mm; }
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-addresses td.address { width: 50%; padding-right: 6mm; }
+table.kitgenix-pdf-invoicing-for-woocommerce-simple-addresses td.address:last-child { padding-right: 0; }
+
+/* Bottom section is rendered as a table for better Dompdf consistency */
+.kitgenix-pdf-invoicing-for-woocommerce-simple-bottom {
+	margin-top: 6mm;
+	display: table;
+	width: 100%;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-simple-notes,
+.kitgenix-pdf-invoicing-for-woocommerce-simple-totals {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-simple-notes { width: 60%; padding-right: 6mm; }
+.kitgenix-pdf-invoicing-for-woocommerce-simple-totals { width: 40%; }
+
+.kitgenix-pdf-invoicing-for-woocommerce-simple-notes h3 { font-size: 10pt; }
+
+table.head { margin-bottom: 10mm; }
+table.head td.header { width: 40%; }
+table.head td.shop-info { width: 60%; text-align: right; }
+
+.kitgenix-pdf-invoicing-for-woocommerce-logo img {
+	max-height: 28mm;
+	max-width: 100%;
+	width: auto;
+	display: inline-block;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-shop-name h3 { font-size: 11pt; }
+
+.kitgenix-pdf-invoicing-for-woocommerce-shop-meta { font-size: 9pt; line-height: 1.25; }
+
+.document-type-label {
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	margin: 0 0 6mm 0;
+}
+
+/* ===========================
+   ADDRESSES + ORDER DATA GRID
+   =========================== */
+table.order-data-addresses { margin-bottom: 10mm; }
+table.order-data-addresses td.address { width: 30%; padding-right: 6mm; }
+table.order-data-addresses td.order-data { width: 40%; }
+
+table.order-data-addresses td.order-data table th {
+	font-weight: 400;
+	padding-right: 2mm;
+	width: 48%;
+}
+
+table.order-data-addresses td.order-data table td {
+	width: 52%;
+	text-align: left;
+}
+
+/* ===========================
+   ORDER DETAILS TABLE
+   =========================== */
+table.order-details { margin-bottom: 0; }
+
+.order-details thead th {
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-table-header-text, #fff);
+	background: var(--kitgenix-pdf-invoicing-for-woocommerce-table-header-bg, #000);
+	border: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #000);
+	padding: 0.45em;
+	font-size: 9pt;
+}
+
+.order-details td {
+	border-left: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc);
+	border-right: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc);
+	border-bottom: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc);
+	padding: 0.45em;
+}
+
+.order-details tbody { border-bottom: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc); }
+
+.order-details .product { width: 52%; }
+.order-details .quantity { width: 12%; text-align: center; }
+.order-details .price { width: 18%; text-align: right; white-space: nowrap; }
+.order-details .total { width: 18%; text-align: right; white-space: nowrap; }
+
+.item-name { font-weight: 700; }
+.item-meta {
+	margin-top: 2mm;
+	font-size: 7.5pt;
+	line-height: 1.1;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-muted-text, #333);
+}
+
+.wc-item-meta { margin: 0; }
+.wc-item-meta li { margin-top: 1.5mm; }
+
+/* ===========================
+   NOTES + TOTALS GRID
+   =========================== */
+table.notes-totals { margin-top: 6mm; }
+td.notes-cell { width: 60%; padding-right: 6mm; }
+td.totals-cell { width: 40%; }
+
+.document-notes, .customer-notes { margin-top: 4mm; }
+
+table.totals { width: 100%; table-layout: fixed; }
+table.totals th, table.totals td {
+	border-top: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc);
+	border-bottom: 1px solid var(--kitgenix-pdf-invoicing-for-woocommerce-border, #ccc);
+	padding: 0.35em;
+}
+table.totals th { font-weight: 700; }
+table.totals td { text-align: right; white-space: nowrap; }
+
+table.totals tr.order_total th,
+table.totals tr.order_total td {
+	border-top: 2px solid var(--kitgenix-pdf-invoicing-for-woocommerce-primary, #000);
+	border-bottom: 2px solid var(--kitgenix-pdf-invoicing-for-woocommerce-primary, #000);
+	font-weight: 700;
+}
+
+/* Hide payment method line in totals (optional; matches competitor’s “Simple”) */
+table.totals tr.payment_method { display: none; }
+
+/* ===========================
+   FOOTER (DOMPDF FRIENDLY)
+   =========================== */
+/* Footer uses a flexible table/flex layout that works across renderers.
+   Use a min-height + padding so multi-line footers aren't clipped. */
+#footer {
+	position: fixed;
+	left: 0mm; /* match body side padding */
+	right: 0mm; /* match body side padding */
+	bottom: 0mm; /* sit at bottom inside reserved @page bottom margin */
+	height: auto;
+	min-height: 24mm; /* allow multiple lines safely */
+	max-height: 40mm; /* prevent accidental full-page coverage */
+	background-color: var(--kitgenix-pdf-invoicing-for-woocommerce-footer-bg, transparent);
+	border-top: 0.2mm solid var(--kitgenix-pdf-invoicing-for-woocommerce-footer-border, #999);
+	box-sizing: border-box;
+	font-size: 8pt;
+	padding: 4mm 6mm; /* vertical + horizontal padding inside footer */
+}
+
+/* Use table/table-cell on the outer footer for better dompdf support */
+#footer .footer-inner {
+	display: table;
+	width: 100%;
+}
+
+#footer .footer-cell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	color: var(--kitgenix-pdf-invoicing-for-woocommerce-footer-text, #333);
+	background-color: transparent; /* outer #footer holds the background */
+}
+
+/* Use flexbox centering when the renderer supports it (more reliable in some engines) */
+@supports (display: flex) {
+	#footer .footer-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	#footer .footer-cell {
+		display: block;
+		padding: 0;
+	}
+}
+
+/* page counters removed */

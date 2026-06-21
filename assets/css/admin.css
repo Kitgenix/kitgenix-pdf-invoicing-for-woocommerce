@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Kitgenix PDF Invoicing For WooCommerce/kitgenix-pdf-invoicing-for-woocommerce
+   ========================================================================== */
+/* ----------------------------------------------------------------
+  Page wrapper
+----------------------------------------------------------------- */
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings {
+  max-width: 1240px;
+}
+
+/* ----------------------------------------------------------------
+  Section cards (settings form groups)
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-section-card {
+  background: var(--kitgenix-surface);
+  border: 1px solid var(--kitgenix-border-color);
+  border-radius: var(--kitgenix-radius);
+  box-shadow: var(--kitgenix-shadow);
+  padding: var(--kitgenix-pad-y) var(--kitgenix-pad-x);
+  margin-bottom: var(--kitgenix-gap);
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-section-card > h2 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--kitgenix-heading);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--kitgenix-border-color);
+  letter-spacing: -0.01em;
+}
+
+/* ----------------------------------------------------------------
+  WP form-table adjustments
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table th {
+  width: 260px;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--kitgenix-heading);
+  padding-right: 16px;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table td {
+  vertical-align: middle;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table .description {
+  display: block;
+  margin-top: 6px;
+  color: var(--kitgenix-text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Inputs */
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table input[type="text"],
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table input[type="url"],
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table textarea,
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table select {
+  max-width: 480px;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid var(--kitgenix-border-color-strong);
+  border-radius: var(--kitgenix-radius-xs);
+  background: var(--kitgenix-surface);
+  color: var(--kitgenix-text-color);
+  transition: border-color var(--kitgenix-transition), box-shadow var(--kitgenix-transition);
+  box-sizing: border-box;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table input[type="text"]:focus-visible,
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table textarea:focus-visible,
+.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table select:focus-visible {
+  outline: none;
+  border-color: var(--kitgenix-brand);
+  box-shadow: var(--kitgenix-focus-ring);
+}
+
+@media (max-width: 782px) {
+  .kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table th {
+    width: auto;
+    display: block;
+  }
+  .kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table td {
+    display: block;
+    padding-top: 0;
+  }
+  .kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table input[type="text"],
+  .kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table textarea,
+  .kitgenix-pdf-invoicing-for-woocommerce-pdf-settings .form-table select {
+    max-width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------------
+  Color picker field
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-color-field {
+  max-width: 140px;
+  display: inline-block;
+}
+
+/* ----------------------------------------------------------------
+  Logo preview
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-logo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-logo-preview img {
+  max-height: 64px;
+  max-width: 220px;
+  border: 1px solid var(--kitgenix-border-color);
+  border-radius: var(--kitgenix-radius-xs);
+  padding: 6px;
+  background: var(--kitgenix-surface);
+  object-fit: contain;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-preview-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ----------------------------------------------------------------
+  Email attachments matrix
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix thead th {
+  background: var(--kitgenix-surface-alt);
+  border-bottom: 1px solid var(--kitgenix-border-color);
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--kitgenix-text-muted);
+  text-align: center;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix thead th:first-child {
+  text-align: left;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix tbody tr {
+  border-bottom: 1px solid var(--kitgenix-border-color);
+  transition: background var(--kitgenix-transition-fast);
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix tbody tr:last-child {
+  border-bottom: none;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix tbody tr:hover {
+  background: color-mix(in srgb, var(--kitgenix-brand) 4%, var(--kitgenix-surface));
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix tbody td {
+  padding: 10px 14px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--kitgenix-heading);
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-attachment-matrix input[type="checkbox"] {
+  accent-color: var(--kitgenix-brand);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------
+  Order meta box
+----------------------------------------------------------------- */
+.kitgenix-pdf-invoicing-for-woocommerce-order-meta {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.kitgenix-pdf-invoicing-for-woocommerce-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.kitgenix-compact-buttons {
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kitgenix-compact-buttons .button {
+  padding: 6px 10px;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------
+  Utilities
+----------------------------------------------------------------- */
+.kitgenix-is-hidden {
+  display: none !important;
+}
+
+/* ----------------------------------------------------------------
+  Accessibility
+----------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings * {
+    transition: none !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+  WORDPRESS 7.0 ADMIN EXTENSIONS
+  Preserve plugin layouts while aligning controls with WP admin styles.
+----------------------------------------------------------------- */
+
+:root {
+  --kitgenix-brand: #4f2a9a;
+  --kitgenix-brand-hover: #42237f;
+  --kitgenix-brand-active: #351b66;
+  --kitgenix-focus-ring: 0 0 0 1px #4f2a9a;
+}
+
+.kitgenix-admin-app :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea),
+.kitgenix-analytics-wrap :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea),
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea) {
+  border-color: #8c8f94;
+  border-radius: 4px;
+  color: #2c3338;
+  background: #ffffff;
+}
+
+.kitgenix-admin-app :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus,
+.kitgenix-admin-app :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus-visible,
+.kitgenix-analytics-wrap :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus,
+.kitgenix-analytics-wrap :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus-visible,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(input[type="text"], input[type="search"], input[type="number"], input[type="url"], input[type="email"], input[type="password"], input[type="date"], select, textarea):focus-visible {
+  border-color: #4f2a9a;
+  box-shadow: 0 0 0 1px #4f2a9a;
+  outline: 2px solid transparent;
+}
+
+.kitgenix-admin-app :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary),
+.kitgenix-analytics-wrap :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary),
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary) {
+  border-color: #4f2a9a;
+  background: #4f2a9a;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.kitgenix-admin-app :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):hover,
+.kitgenix-admin-app :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):focus-visible,
+.kitgenix-analytics-wrap :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):hover,
+.kitgenix-analytics-wrap :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):focus-visible,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):hover,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-primary, button.button-primary, a.button.button-primary, input.button.button-primary):focus-visible {
+  border-color: #42237f;
+  background: #42237f;
+  color: #ffffff;
+}
+
+.kitgenix-admin-app :is(.button.button-secondary, button.button-secondary, a.button.button-secondary),
+.kitgenix-analytics-wrap :is(.button.button-secondary, button.button-secondary, a.button.button-secondary),
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-secondary, button.button-secondary, a.button.button-secondary) {
+  border-color: #4f2a9a;
+  color: #4f2a9a;
+  background: #f6f7f7;
+}
+
+.kitgenix-admin-app :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):hover,
+.kitgenix-admin-app :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):focus-visible,
+.kitgenix-analytics-wrap :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):hover,
+.kitgenix-analytics-wrap :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):focus-visible,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):hover,
+.wrap.kitgenix-pdf-invoicing-for-woocommerce-pdf-settings :is(.button.button-secondary, button.button-secondary, a.button.button-secondary):focus-visible {
+  border-color: #42237f;
+  color: #42237f;
+  background: #f0f0f1;
+}
